@@ -1,0 +1,149 @@
+class Display extends React.Component {
+    constructor(props) {
+      super(props);  
+  
+      render() {
+        return (
+          <div>
+           {this.state.sessionMin}
+          </div>
+        );
+      }
+    }
+  }
+
+  <Display />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  import logo from './logo.svg';
+  import './App.css';
+  import React from 'react';
+  import ReactFCCtest from 'react-fcctest';
+  
+  function App() {
+  
+  
+      return (
+      <div className="App">
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <p>
+            Prodomo Timer
+          </p>
+          
+          <Settings />
+        </header>
+        <ReactFCCtest />
+        <div class="display">
+       
+        </div>
+      </div>
+    );
+  }
+  
+  class Settings extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        count: 0,
+        breakMin:5,
+        breakSec:0,
+        sessionMin:25,
+        sessionSec:0
+      };
+      
+  this.incrementBreak = this.incrementBreak.bind(this)
+  this.decrementBreak = this.decrementBreak.bind(this)
+  
+  this.incrementSession = this.incrementSession.bind(this)
+  this.decrementSession = this.decrementSession.bind(this)
+  
+  this.resetBreak = this.resetBreak.bind(this)
+  this.resetSession = this.resetSession.bind(this)
+      
+    }
+    
+  incrementBreak(){
+  this.setState(state=>({
+    breakMin : state.breakMin+1}))
+  }
+  decrementBreak(){
+  this.setState(state=>({
+    breakMin : state.breakMin-1}))
+  }
+  
+  resetBreak(){
+    this.setState(state=>({
+      breakMin : 5}))
+    }
+  
+  
+  incrementSession(){
+  this.setState(state=>({
+    sessionMin : state.sessionMin+1}))
+  }
+  decrementSession(){
+  this.setState(state=>({
+    sessionMin : state.sessionMin-1}))
+  }
+  
+  resetSession(){
+  this.setState(state=>({
+    sessionMin : 25}))
+  }
+  
+  
+    // Change code above this line
+    render() {
+      return (
+  <div>
+          
+          
+  
+    <div class="settings">
+      <div class="Break Tab">
+          <button className='inc' id="break-increment" onClick={this.incrementBreak}>+</button>
+          <button className='dec' id="break-decrement" onClick={this.decrementBreak}>-</button>
+          <button className='reset' onClick={this.resetBreak}>Reset</button>
+          <div id="break-label">Break Length:
+          <h1 id="break-length">{this.state.breakMin}</h1></div>
+      </div>
+  
+       <div class="Session Tab">
+          <button className='inc' id="session-increment"  onClick={this.incrementSession}>+</button>
+          <button className='dec' id="session-decrement" onClick={this.decrementSession}>-</button>
+          <button className='reset' onClick={this.resetSession}>Reset</button>
+          <div id="session-label">Session Length:
+          <h1 id="session-length"> {this.state.sessionMin}</h1></div>
+          </div>
+          </div>
+      </div>
+      );
+    }
+  };
+    
+  
+  export default App;
+
+<div></div>
+  <button></button>
+  
